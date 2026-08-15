@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# gatekeep CLI wrapper: runs gatekeep.py from its own directory so it works
+# from anywhere regardless of cwd / PATH.
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec python3 "$DIR/gatekeep.py" "$@"
